@@ -5,8 +5,10 @@ import ProductCard from "../components/products/productCard.jsx";
 export default function ProductPage() {
     const products = useLoaderData();
 
-    return <div>
-        <div>LandingPageRoute</div>
-        {products.map(product => <ProductCard key={product.id} product={product}/>)}
-    </div>
+    return <>
+        <div>
+            {products.map(product => <ProductCard key={product.id} product={product}/>)}
+        </div>
+        <pre>{JSON.stringify(products, null, 2)}</pre>
+    </>
 }
