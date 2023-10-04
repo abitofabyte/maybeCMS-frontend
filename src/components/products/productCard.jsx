@@ -1,13 +1,11 @@
 import TagSmall from "../tags/tagSmall.jsx";
+import style from "./productCard.module.css"
 
 function ProductCard({product}) {
-    return (<div>
+    return (<div className={style.card}>
         <h2>{product.name}</h2>
         <div>{product.description}</div>
-        <div>{product.tag.map(tag => <TagSmall key={tag.id} tag={tag} />)}</div>
-
-
-        <pre>{JSON.stringify(product, null, 2)}</pre>
+        <div>{product.tags.map(tag => <TagSmall key={tag.id} tag={tag} />)}</div>
     </div>)
 }
 
