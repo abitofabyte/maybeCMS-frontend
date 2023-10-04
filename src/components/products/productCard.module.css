@@ -1,0 +1,26 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+
+    color: white;
+    background: #213657AA;
+    backdrop-filter: blur(5px);
+
+    min-width: 5rem;
+    max-width: 10rem;
+
+    border-radius: 0.5rem;
+}
+.card * {
+    margin: 0;
+    padding: 0;
+}
+
+.card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.card div:last-child {
+    margin-top: 0.5rem;
+}
