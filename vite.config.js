@@ -5,7 +5,7 @@ import Config from "./src/Config"
 // https://vitejs.dev/config/
 export default defineConfig({
 	server: {
-		port: 80
+		port: 8001
 	},
 	plugins: [react()]
 })
