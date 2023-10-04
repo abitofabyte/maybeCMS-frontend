@@ -7,6 +7,6 @@ export default function ProductPage() {
 
     return <div>
         <div>LandingPageRoute</div>
-        {products.map((p, i) => <ProductCard key={i} product={p}/>)}
+        {products.map(product => <ProductCard key={product.id} product={product}/>)}
     </div>
 }
