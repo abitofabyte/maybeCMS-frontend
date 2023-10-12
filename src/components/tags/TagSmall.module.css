@@ -1,0 +1,13 @@
+.tag {
+    margin: 0.1rem;
+    padding: 0.3rem;
+
+    min-width: 4rem;
+
+    font-size: x-small;
+
+    background-color: #77889966;
+    backdrop-filter: blur(4px);
+
+    border-radius: 0.2rem;
+}

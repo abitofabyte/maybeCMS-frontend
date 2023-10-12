@@ -1,0 +1,36 @@
+.nav {
+    height: 5em;
+
+    /*flex-grow: 1;*/
+    padding: 0.5em 2em;
+
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    height: 75%;
+
+}
+
+.navBar button {
+    padding: 0.2em 0.4em;
+    border-radius: 20px;
+    background: dimgrey;
+    color: ghostwhite;
+}
+
+.navBar button:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 0 12px  1px dimgrey inset;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+}

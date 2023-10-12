@@ -1,9 +1,4 @@
 #root {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 0;
-}
-
-.nav-bar {
-	text-align: center;
+	height: 100dvh;
+	/*overflow: hidden;*/
 }
