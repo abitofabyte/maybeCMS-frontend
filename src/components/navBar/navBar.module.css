@@ -1,9 +1,9 @@
 .nav {
-    height: 5em;
-
-    /*flex-grow: 1;*/
+    position: sticky;
+    top: 0;
     padding: 0.5em 2em;
-
+    background-color: white;
+    z-index: 2;
 }
 
 .navBar {
@@ -14,20 +14,31 @@
     justify-content: space-between;
 
     height: 75%;
-
 }
 
-.navBar button {
-    padding: 0.2em 0.4em;
-    border-radius: 20px;
-    background: dimgrey;
-    color: ghostwhite;
+.navBar img {
+    height: 50px;
 }
 
-.navBar button:hover {
-    background: white;
+.buttons button {
+    padding: 0.2em 1em;
+    border: 1px solid dimgrey;
+    box-shadow: 0 0 4px 0 dimgrey;
+}
+
+.buttons button:first-child {
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+.buttons button:last-child {
+    border-radius: 0 0.5em 0.5em 0;
+}
+
+.buttons button:hover,
+.buttons button.selected {
+    background: #f6f6f6;
     color: black;
-    box-shadow: 0 0 12px  1px dimgrey inset;
+    box-shadow: 0 0 2px 0 dimgrey inset;
 }
 
 .title {

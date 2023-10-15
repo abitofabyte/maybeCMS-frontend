@@ -1,13 +1,16 @@
 .tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0.1rem;
-    padding: 0.3rem;
 
     min-width: 4rem;
+    height: 1.6rem;
 
     font-size: x-small;
 
-    background-color: #77889966;
-    backdrop-filter: blur(4px);
+    background-color: #00000044;
+    backdrop-filter: blur(10px);
 
     border-radius: 0.2rem;
 }

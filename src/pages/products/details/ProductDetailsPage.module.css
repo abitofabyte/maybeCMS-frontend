@@ -1,0 +1,28 @@
+.page {
+    padding: 2em;
+}
+
+.title {
+    font-size: xxx-large;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.container {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.description {
+    line-height: 1.2em;
+    text-align: justify;
+}
+
+.imageLarge {
+    min-height: 36em;
+}
+
+.imageSmall {
+    width: 6em;
+    height: 4em;
+}
