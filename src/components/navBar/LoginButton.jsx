@@ -1,30 +1,31 @@
-import {useState} from "react";
-import LoginModal from "../login/LoginModal.jsx";
-import {Button} from "react-bootstrap";
-import {VscAccount} from "react-icons/vsc";
-
+import { useState } from "react"
+import LoginModal from "../login/LoginModal.jsx"
+import { Button } from "react-bootstrap"
+import { VscAccount } from "react-icons/vsc"
 
 function LoginButton() {
-    const [show, setShow] = useState(false)
+	const [show, setShow] = useState(false)
 
-    function handleShowModal() {
-        setShow(old => !old)
-    }
+	function handleShowModal() {
+		setShow((old) => !old)
+	}
 
-    return (
-        <>
-            <Button type="button"
-                    size="lg"
-                    className="d-flex justify-content-center align-items-center"
-                    variant="outline-dark"
-                    onClick={handleShowModal}
-            >
-                <VscAccount />
-            </Button>
-            <LoginModal show={show}
-                        onHide={handleShowModal}/>
-        </>
-    )
+	return (
+		<>
+			<Button
+				type="button"
+				size="lg"
+				className="d-flex justify-content-center align-items-center"
+				variant="outline-dark"
+				onClick={handleShowModal}>
+				<VscAccount />
+			</Button>
+			<LoginModal
+				show={show}
+				onHide={handleShowModal}
+			/>
+		</>
+	)
 }
 
 export default LoginButton
