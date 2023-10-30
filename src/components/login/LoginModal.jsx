@@ -2,6 +2,7 @@ import {useStoreContext} from "../../Store/StoreContext.jsx";
 import {useState} from "react";
 import {Button, FloatingLabel, Form, Modal} from "react-bootstrap";
 import PropTypes from "prop-types";
+import style from "./LoginModal.module.css"
 
 function LoginModal({show, onHide}) {
 
@@ -34,32 +35,32 @@ function LoginModal({show, onHide}) {
 
     return (
         <Modal show={show} onHide={onHide}>
-            <Form noValidate validated={validated} onSubmit={handleSubmit} onReset={handleReset}>
-                <FloatingLabel controlId="email"
-                               label="Email address"
-                >
-                    <Form.Control type="email"
-                                  name="email"
-                                  placeholder="name@example.com"
-                                  required/>
-                    <Form.Control.Feedback type="invalid">
-                        Please enter a valid email address.
-                    </Form.Control.Feedback>
-                </FloatingLabel>
-                <FloatingLabel controlId="password"
-                               label="Password"
-                >
-                    <Form.Control type="password"
-                                  name="password"
-                                  placeholder="Password"
-                                  required/>
-                    <Form.Control.Feedback type="invalid">
-                        Please enter your password.
-                    </Form.Control.Feedback>
-                </FloatingLabel>
-                <Button type="submit">Submit</Button>
-                <Button type="reset">Reset</Button>
-            </Form>
+            <div className={style.modal}>
+                <Form noValidate validated={validated} onSubmit={handleSubmit} onReset={handleReset}>
+                    <FloatingLabel controlId="email"
+                                   label="Email address">
+                        <Form.Control type="email"
+                                      name="email"
+                                      placeholder="name@example.com"
+                                      required/>
+                        <Form.Control.Feedback type="invalid">
+                            Please enter a valid email address.
+                        </Form.Control.Feedback>
+                    </FloatingLabel>
+                    <FloatingLabel controlId="password"
+                                   label="Password">
+                        <Form.Control type="password"
+                                      name="password"
+                                      placeholder="Password"
+                                      required/>
+                        <Form.Control.Feedback type="invalid">
+                            Please enter your password.
+                        </Form.Control.Feedback>
+                    </FloatingLabel>
+                    <Button type="submit">Submit</Button>
+                    <Button type="reset">Reset</Button>
+                </Form>
+            </div>
         </Modal>
     )
 }
