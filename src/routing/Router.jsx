@@ -70,7 +70,7 @@ const router = createBrowserRouter([
             }
         ],
         loader: fetchCategories,
-        errorElement: ErrorPage
+        errorElement: <ErrorPage />
     }
 ])
 

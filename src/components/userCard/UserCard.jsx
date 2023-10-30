@@ -2,20 +2,22 @@ import PropTypes from "prop-types"
 
 import style from "./userCard.module.css"
 
-function UserCard({ image, alt }) {
-	return (
-		<div className={style.card}>
-			<img className={style.image}
-				src={image}
-				alt={alt}
-			></img>
-		</div>
-	)
+function UserCard({user}) {
+
+    const {profilePicture, handle} = user;
+
+    return (
+        <div className={style.card}>
+            <img className={style.image}
+                 src={profilePicture}
+                 alt={"Profile Picture of " + handle}
+            />
+        </div>
+    )
 }
 
 UserCard.propTypes = {
-	image: PropTypes.string.isRequired,
-	alt: PropTypes.string
+    user: PropTypes.object.isRequired,
 }
 
 export default UserCard

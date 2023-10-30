@@ -1,0 +1,11 @@
+$utilities: map-merge(
+                $utilities,
+                (
+                        "justify-self": (
+                                property: justify-self,
+                                class: justify-self,
+                                responsive: true,
+                                values: stretch center start end,
+                        )
+                )
+);

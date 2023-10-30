@@ -3,6 +3,7 @@ const root = "/"
 export default {
     routing: {
         backend: {
+            login: backend + "authenticate",
             products: backend + "products",
             categories: backend + "categories"
         },
