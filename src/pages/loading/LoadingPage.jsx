@@ -1,10 +1,9 @@
-import style from "./LoadinPage.module.css"
-import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner.jsx";
+import { Spinner, Stack } from "react-bootstrap"
 
 export default function LoadingPage() {
 	return (
-		<div className={style.container} >
-			<LoadingSpinner />
-		</div>
+		<Stack className={"h-100 align-items-center justify-content-center"}>
+			<Spinner variant="secondary" />
+		</Stack>
 	)
 }

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import LoginModal from "../login/LoginModal.jsx"
+import LoginModal from "./LoginModal.jsx"
 import { Button } from "react-bootstrap"
 import { VscAccount } from "react-icons/vsc"
 
