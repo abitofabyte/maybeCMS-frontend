@@ -1,11 +1,13 @@
 import { createContext, useContext, useEffect, useState } from "react"
-import PropTypes from "prop-types"
-import config from "../Config.js"
+import config from "./Config.js"
 import { Buffer } from "buffer"
+import router from "./routing/Router.jsx"
+import { RouterProvider } from "react-router-dom"
+import LoadingPage from "./pages/loading/LoadingPage.jsx"
 
-const StoreContext = createContext(null)
+const ApplicationContext = createContext(null)
 
-function StoreContextProvider({ children }) {
+function Application() {
 	const [user, setUser] = useState(null)
 
 	async function login(email, password) {
@@ -35,7 +37,6 @@ function StoreContextProvider({ children }) {
 			"Content-Type": "application/json",
 		}
 		const data = await fetch(config.routing.backend.login, { headers }).then((res) => res.json())
-		console.log(data)
 		if (data.error) {
 			//todo: fix
 			console.log(data)
@@ -43,7 +44,6 @@ function StoreContextProvider({ children }) {
 		}
 		localStorage.setItem("data", JSON.stringify(data))
 		setUser(data)
-		console.log("?")
 	}
 
 	useEffect(() => {
@@ -53,17 +53,20 @@ function StoreContextProvider({ children }) {
 		}
 	}, [])
 
-	return <StoreContext.Provider value={{ user, login, logout }}>{children}</StoreContext.Provider>
+	return (
+		<Application.Provider value={{ user, login, logout }}>
+			<RouterProvider
+				router={router(user)}
+				fallbackElement={<LoadingPage />}
+			/>
+		</Application.Provider>
+	)
 }
 
-StoreContextProvider.propTypes = {
-	children: PropTypes.node.isRequired,
-}
+export default Application
 
-export default StoreContextProvider
-
-export function useStoreContext() {
-	const context = useContext(StoreContext)
+export function useApplicationContext() {
+	const context = useContext(ApplicationContext)
 	if (!context) {
 		throw new Error("useStoreContext must be used within a UserContextProvider")
 	}

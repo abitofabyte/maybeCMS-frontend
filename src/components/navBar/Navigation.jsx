@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import { useLoaderData, useNavigate } from "react-router-dom"
 import LoginButton from "../login/LoginButton.jsx"
-import { useStoreContext } from "../../Store/StoreContext.jsx"
+import { useApplicationContext } from "../../Application.jsx"
 import UserMenu from "./UserMenu.jsx"
 import { Button, ButtonGroup, Nav, Navbar, Stack } from "react-bootstrap"
 import config from "../../Config.js"
@@ -11,7 +11,7 @@ function Navigation({ title }) {
 	const [currentCategory, setCurrentCategory] = useState(null)
 	const navigate = useNavigate()
 	const categories = useLoaderData()
-	const { user } = useStoreContext()
+	const { user } = useApplicationContext()
 
 	function handleCategorySelect(category) {
 		if (category !== currentCategory) {

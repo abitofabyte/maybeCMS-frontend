@@ -2,11 +2,11 @@ import { useState } from "react"
 import PropTypes from "prop-types"
 import { Image } from "react-bootstrap"
 import style from "./UserMenu.module.css"
-import { useStoreContext } from "../../Store/StoreContext.jsx"
+import { useApplicationContext } from "../../Application.jsx"
 import UserOffcanvas from "./UserOffcanvas.jsx"
 
 function UserMenu({ user }) {
-	const { logout } = useStoreContext()
+	const { logout } = useApplicationContext()
 	const [show, setShow] = useState(false)
 	const { handle, email, profilePicture } = user
 

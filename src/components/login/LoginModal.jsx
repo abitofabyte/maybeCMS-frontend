@@ -1,11 +1,11 @@
-import { useStoreContext } from "../../Store/StoreContext.jsx"
+import { useApplicationContext } from "../../Application.jsx"
 import { useState } from "react"
 import { Button, FloatingLabel, Form, Modal, Stack } from "react-bootstrap"
 import PropTypes from "prop-types"
 
 function LoginModal({ show, onHide }) {
 	const [validated, setValidated] = useState(false)
-	const { login } = useStoreContext()
+	const { login } = useApplicationContext()
 
 	async function handleSubmit(event) {
 		const form = event.currentTarget
