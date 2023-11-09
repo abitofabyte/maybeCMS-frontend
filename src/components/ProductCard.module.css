@@ -1,0 +1,18 @@
+.card {
+    width: 16em;
+    height: 24em;
+}
+.title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.card > * {
+    padding: 1em;
+    overflow: hidden;
+}
+.card > img {
+    padding: 0;
+    height: 100%;
+    object-fit: cover;
+}
