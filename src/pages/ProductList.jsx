@@ -16,7 +16,7 @@ export function ProductList() {
 
 	const { products, getProductByCategory } = useData()
 
-	const pageNumber = products?.pageable.pageNumber
+	const pageNumber = products?.pageable?.pageNumber || searchParams.get("page")
 	const totalPages = products?.totalPages
 	const lastPage = totalPages - 1
 
@@ -32,6 +32,10 @@ export function ProductList() {
 		getProductByCategory(category.name, searchParams)
 	}, [category])
 
+	useEffect(() => {
+		getProductByCategory(category.name, searchParams)
+	}, [searchParams])
+
 	if (products === null || products.category === null) return <LoadingPage />
 
 	return (
@@ -40,7 +44,7 @@ export function ProductList() {
 				direction="horizontal"
 				className="flex-wrap"
 				gap="1">
-				{products.content.map((product) => (
+				{products?.content?.map((product) => (
 					<ProductCard
 						key={product.id}
 						product={product}
